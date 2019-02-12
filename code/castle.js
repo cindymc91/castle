@@ -23,11 +23,16 @@ exports.grabAllurl = async function grabAllurl (url){
 
 exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
   let filteredResults = [];
-  let urlTabResto;
 
-  let test;
+  //Variables pour le json
+  //let url;
+  let urlTabResto;
+  let propertyName;
+  let chefName;
+  let jsonObject;
+
+
   for(var i = 0; i < tabAllurl.length; i++){
-    //console.log(tabAllurl[i]);
     //Une requête
     const options = {
       uri: tabAllurl[i],
@@ -45,6 +50,8 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
         //filteredResults.push(tabAllurl[i]);
 
         urlTabResto = $('.jsSecondNav').children('.jsSecondNavMain').children('li').eq(1).children('a').attr('href');
+        propertyName = $('h3.mainTitle2.noVerticalMargin').first().text();
+
 
         const options2 = {
           uri: urlTabResto,
@@ -54,15 +61,26 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
         };
 
         let $2 = await request_promise(options2);
+        chefName = $2('.tabRestaurant').children('.grid').children('#restaurant-staff').children('.staffCard').children('.staffCard-heading').children('h4').first().text()
+        jsonObject = {
+          'url' : tabAllurl[i],
+          'urlTabResto' : urlTabResto,
+          'propertyName' : propertyName,
+          'chefName' : chefName
+        };
+
+        filteredResults.push(jsonObject);
 
 
-         filteredResults.push($2('.tabRestaurant').children('.grid').children('#restaurant-staff').children('.staffCard').children('.staffCard-heading').children('h4').first().text());
+         //filteredResults.push($2('.tabRestaurant').children('.grid').children('#restaurant-staff').children('.staffCard').children('.staffCard-heading').children('h4').first().text());
          //filteredResults.push($2('.tabRestaurant').children('.grid').children('#restaurant-chief-carousel').children('#restaurant-chief').children('h4').first().text());
 
       }
       else{
         //console.log('Bad');
       }
+
+      process.stdout.write("Fetching " + i + "/" + tabAllurl.length + "\r");
   }
   catch(error){
     console.log(error);

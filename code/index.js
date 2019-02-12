@@ -48,28 +48,42 @@ function txtToArray(file) {
 return array;
 }
 
+function toTxt(stringifiedObject, file){
+  var fs = require('fs');
+  var stream = fs.createWriteStream(file);
+  stream.once('open', function(fd) {
+    stream.write(stringifiedObject);
+    stream.end();
+  });
+}
+
+function fromTxt(file){
+  var fs = require('fs');
+  var result = fs.readFileSync(file);
+  return result.toString();
+}
+
 let tabWithAllurl; //liste avec les 150 url correspondant aux établissements français
 let tabHotelRestaurant; //liste avec les noms des chefs des établissements
 let chefStarredResto; //liste avec les chefs des restos étoilés
+let finalSelection = []; //liste avec les établissements français étoilés
 
 async function start(){
 
   //--------------------Bloc qui stock dans des txt les data scrappés-------------//
 
-  /*
+
+/*
   tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
-  arrayToTxt(tabWithAllurl, 'allurl.txt');
-  console.log('url ok');
 
   tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
-  arrayToTxt(tabHotelRestaurant, 'allChefProperties.txt');
-  console.log('properties chef ok');
-
-
+  let j = JSON.stringify(tabHotelRestaurant);
+  toTxt(j, "json_relais-chateaux.txt");
 
   chefStarredResto = await michelin.grabChefName();
   arrayToTxt(chefStarredResto, 'allChefStarred.txt');
   console.log('resto chef ok');
+
 */
 
   //------------------------------------------------------------------------------//
@@ -77,18 +91,26 @@ async function start(){
 
 
   //--------------------Bloc qui récup les données des txt et les mets dans les array-------------//
-  //tabWithAllurl = txtToArray("allurl.txt");
-  //tabHotelRestaurant = txtToArray("allChefProperties.txt");
+
+
+  tabWithAllurl = txtToArray("allurl.txt");
+
+  let j_bis = fromTxt("json_relais-chateaux.txt");
+  tabHotelRestaurant = JSON.parse(j_bis);
+
   chefStarredResto = txtToArray("allChefStarred.txt");
-  console.log(chefStarredResto.length);
-  console.log(chefStarredResto);
+
+  //console.log(tabHotelRestaurant[10].chefName);
+  //console.log(chefStarredResto[10]);
+  //console.log(tabHotelRestaurant.length);
+
 
   //------------------------------------------------------------------------------//
 
 
 
   /*
-  //--------------------Bloc à exécuger pour du scraping en temps réel (long)-------------//
+  //--------------------Bloc à exécuter pour du scraping en temps réel (très long)-------------//
 
     //On récupère la partie Relaix Chateaux
     //--tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
@@ -101,6 +123,31 @@ async function start(){
 
   //------------------------------------------------------------------------------//
   */
+
+
+
+
+
+
+  for(var i = 0; i < tabHotelRestaurant.length; i++){
+    for(var j = 0; j < chefStarredResto.length; j++){
+      if(tabHotelRestaurant[i].chefName != '' && tabHotelRestaurant[i].chefName.toUpperCase() === chefStarredResto[j].toUpperCase()){
+        finalSelection.push(tabHotelRestaurant[i]);
+      }
+    }
+  }
+  console.log(finalSelection);
+  console.log(finalSelection.length);
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -138,3 +185,43 @@ async function start(){
 }
 
 start();
+
+
+
+
+
+
+
+/*
+const name1 = "test";
+const url1 = "urlTest";
+const name2 = "test2";
+const url2 = "urlTest2";
+const restaurant = [
+  {
+    'name' : name1,
+    'url' : url1
+  }];
+
+console.log(restaurant);
+
+restaurant.push({'name' : name2, 'url' : url2});
+
+
+//console.log(restaurant);
+//arrayToTxt(restaurant, 'test_resto.txt');
+
+var json = JSON.stringify(restaurant);
+
+console.log(json);
+
+var jsonArray = JSON.parse(json);
+console.log("--------------\n");
+console.log(jsonArray);
+
+*/
+
+
+
+
+//
