@@ -147,7 +147,29 @@ async function start(){
 
 //start();
 
+function menu(){
+  const readLineSync = require('readline-sync')
+  var colors = require('colors');
 
+  let userRes;
+  console.clear();
+  while (userRes !== '0') {
+    console.log("-------------------------------------------------")
+    console.log("Relais-Chateaux / Michelin Restaurant WORKSHOP".green.bgBlack)
+    console.log("-------------------------------------------------")
+    console.log("Search in saved data (quick)")
+    console.log("Search in real time (may take up to 10 minutes)")
+    userRes = readLineSync.question("\nPick a mode or Press Ctrl+C to exit");
+    if (userRes === '1') {
+      console.log("You chose option 1")
+
+    } else if (userRes === '2') {
+      start();
+    }
+  }
+}
+
+menu();
 
 
 
