@@ -125,9 +125,7 @@ async function start(){
   */
 
 
-
-
-
+//Comparaison pour ne garder que les étoilés
 
   for(var i = 0; i < tabHotelRestaurant.length; i++){
     for(var j = 0; j < chefStarredResto.length; j++){
@@ -139,87 +137,21 @@ async function start(){
   console.log(finalSelection);
   console.log(finalSelection.length);
 
+//let price = castle.getPrice2(tabWithAllurl);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //On récupère la partie Relaix Chateaux
-  //--tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
-  //tabWithAllurl = txtToArray("allurl.txt");
-  //console.log(tabWithAllurl);
-  //arrayToTxt(tabWithAllurl, 'allurl.txt');
-
-
-  //console.log(tabWithAllurl[0]);
-  //console.log(tabWithAllurl[1]);
-  //--tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
-  //console.log(tabHotelRestaurant[0]);
-  //console.log(tabHotelRestaurant[1]);
-  /*console.log(tabHotelRestaurant);
-  console.log(tabHotelRestaurant.length);*/
-
-
-  //On récupère la partie Michelin
-  //--chefStarredResto = await michelin.grabChefName();
-  //console.log(chefStarredResto[20]);
-  //console.log(chefStarredResto.length);
-
-  /*for(var i = 0; i < 626; i++){
-  if(starredResto[i].toUpperCase() === 'au crocodile'.toUpperCase()){
-  console.log(starredResto[i]);
-  console.log(i);
-}
-}*/
 
 }
 
-start();
+
+
+//start();
 
 
 
 
 
 
-
-/*
-const name1 = "test";
-const url1 = "urlTest";
-const name2 = "test2";
-const url2 = "urlTest2";
-const restaurant = [
-  {
-    'name' : name1,
-    'url' : url1
-  }];
-
-console.log(restaurant);
-
-restaurant.push({'name' : name2, 'url' : url2});
-
-
-//console.log(restaurant);
-//arrayToTxt(restaurant, 'test_resto.txt');
-
-var json = JSON.stringify(restaurant);
-
-console.log(json);
-
-var jsonArray = JSON.parse(json);
-console.log("--------------\n");
-console.log(jsonArray);
-
-*/
 
 
 

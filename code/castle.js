@@ -90,3 +90,62 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
   return filteredResults;
   //console.log(tabAllurl.length);
 }
+
+// "https://www.relaischateaux.com/fr/search/availability/check?month=2019-2&idEntity=360&pax=2&room=1"
+
+exports.getPrice = function getPrice(url){
+  const options = {
+    uri: url,
+    json : true
+  }
+
+  request_promise(options)
+    .then((data) => {
+      let result;
+      //result = data['2019-2'].pricesPerDay[1];
+      //result = data.directory_items[0].user.username;
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+exports.getPrice2 = async function getPrice2(tabAllurl){
+  for(var i = 0; i < 2; i++){
+    //Une requête
+    const options = {
+      uri: tabAllurl[i],
+      transform: function (body) {
+        return cheerio.load(body);
+      }
+    };
+    try{
+      let $ = await request_promise(options);
+      if($('.jsSecondNav').children('.jsSecondNavMain').children('li').children('a').first().attr('data-id') === 'isProperty'){
+
+        const options2 = {
+          uri: "https://www.relaischateaux.com/fr/search/availability/check?month=2019-2&idEntity=360&pax=2&room=1",
+          json : true
+        };
+
+        let $2 = await request_promise(options2);
+        jsonObject = {
+          'url' : tabAllurl[i],
+          'price' : $2[1].pricespPerDay[1]
+        };
+        console.log(jsonObject);
+
+        filteredResults.push(jsonObject);
+
+      }
+      else{
+        //console.log('Bad');
+      }
+  }
+  catch(error){
+    console.log(error);
+}
+
+  }
+}
