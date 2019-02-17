@@ -6,7 +6,7 @@ Patrice Vander
 Frédéric Doucet
 Mauro Colagreco
 Benjamin Delpierre
-Christian Constant
+Jean-François Bérard
 Stéphane Laruelle
 Patrick Jeffroy
 Yoann Conte
@@ -14,7 +14,6 @@ Mathias Dandine
 Marc Haeberlin
 Nicolas Magie
 Christophe Pelé
-Jean-François Bérard
 Perochon Jean Marc
 Christophe Bacquié
 Arnaud Lallement
@@ -22,22 +21,23 @@ Franck Putelat
 Nicolas Rondelli
 Patrick Bertron
 Didier Goiffon
+Christian Constant
 Jean Coussau
 Olivier Bellin
 Mathieu Aumont
 Paul BOCUSE
 Gérald Passédat
 Glenn Viel
+Dominique Bouchet
 Didier Casaguana
 Anne-Sophie Pic
-Dominique Bouchet
+Hideki Nishi
 Vincent David
 Benjamin Bruno
 Gilles Goujon
 Thierry Marx
 Christophe Quéant
 Pierre Bertranet
-William Boquelet
 Maximin Hellio
 Stéphane Derbord
 Jérôme Mamet
@@ -46,21 +46,22 @@ Hugo Roellinger
 Maxime Laurenson
 Keishi Sugimura
 Ivan Vautier
+William Boquelet
 Patrick  Raingeard
 Mourad Haddouche
 Fumiko et Anthony Maubert
-Jean-Marie et Hubert Chanove
 Pierre GAGNAIRE
 Philippe Girardon
 Jérémy Morin
 Xavier Isabal
 Sébastien Bonnet
 Le Chef Julien Binz
+Stéphanie Le Quellec
 Frédéric Garnier
 Benoit Vidal
 Yohann Lemonnier
 Jérémie Le Calvez
-Stéphanie Le Quellec
+Laurent Azoulay
 Alain Gardillou
 Jany Gleize
 Bruno Poiré
@@ -73,7 +74,6 @@ Benoit Dumas
 Michaël Arnoult
 Loic Le Bail
 Philippe  Jourdin
-Laurent Azoulay
 Philippe Deschamps
 Frédéric Molina
 Loïc Lecoin
@@ -82,16 +82,16 @@ Vivien Durand
 Martin Simonart
 Jean-Baptiste Natali
 Mathieu Guibert
+Jean-Marie et Hubert Chanove
 Alexis Albrecht
 Frédéric Robert
 Laurent Lemal
 Jean-Alexandre Ouaratta
-Hideki Nishi
 Rémi Chambard
 Yohann Chapuis
 Michele Fortunato 
-Dominique Giraudeau et Pascal Champion
 Jocelyn Herland
+Dominique Giraudeau et Pascal Champion
 Cyril Attrazic
 Patrick Gauthier
 Daniel et Stéphane Chambon
@@ -103,9 +103,9 @@ Xavier Lesueur
 Gilles Dudognon
 Jérôme Banctel
 Jean-Louis Nomicos
+Bernard Pacaud
 Jean-Georges Klein et  Paul Stradner
 Chiho Kanzaki
-Bernard Pacaud
 Jean-François Malle
 Nicolas Masse
 Cyril Lignac
@@ -120,19 +120,19 @@ Ruben & Pieter de Maesschalck
 Christophe Schmitt
 Cédric Béchade
 Luc Mobihan
-Virginie Basselot
+Arnaud Philippon
 Thierry Merville
+Virginie Basselot
 Anne-Sophie Pic
 Stéphane Polly
 Olivier Da Silva
 Christophe Dufau
-Jean-Michel Lorain
 Pascal Bastian
 Rémy Giraud
 Wilfrid Chaplain
+Laurent Magnin
 Georges BLANC
 Olivier Samin
-Laurent Magnin
 Pascal Borrell
 Guillaume Royer
 Guy SAVOY
@@ -146,19 +146,16 @@ Samuel Lee
 Le chef Franco Bowanee et Karina Laval, chef pâtissière.
 Philippe Brun
 Gaël Orieux
-Arnaud Philippon
 Jérôme Brochot
-Sandrine Dupin
 Julien Rocheteau
 Bruno Cirino
 Josselin Jeanblanc
+Philippe LABBÉ
 Jean-Christophe Ansanay-Alex
 Thomas Boullault
-Philippe LABBÉ
+Jean-Michel Lorain
 Thierry Schwartz
 Michel et César Troisgros
-Jean-François Rouquette
-Jacques Decoret
 Jean-Michel Bardet
 William Frachot
 Régis et  Jacques Marcon
@@ -168,7 +165,6 @@ David Goerne
 Philippe Mille
 David Biasibetti
 Edouard Mignot
-Nicolas Sale
 Julien Dumas
 Philippe  Da Silva
 Nicolas Conraux
@@ -182,35 +178,40 @@ Frank Renimel
 Aurélien Véquaud
 Armand Arnal
 Keisuke Yamagishi
-Maxime Nouail
+Sandrine Dupin
 Christian Têtedoie
+Maxime Nouail
 Mathieu Viannay
 Lionel Levy
 Guillaume Sourrieu
 Philippe Bélissent
-Régis Douysset
 Sébastien Buecher
 Ludovic Turac
+Régis Douysset
 Bernard Leray
 David Delsart
 Alexandre Fabris
 Joël Césari
 Alain Llorca
+Jean-François Rouquette
+Jacques Decoret
 Cyril Leclerc
 Lutz Janisch
 Alain Dutournier
-Sylvestre Wahid
 Nicolas Sale
+Sylvestre Wahid
 Eric Pras
+Nicolas Sale
 Pascal Bardet
 Romain Barthe
 LAISNEY Stanislas
 Alain Périllat-Mercerot
-Christophe Comes
 Jean-Denis Lebras
+Hugues Droz
+Christophe Comes
 Thierry Drapeau
-Yannick Delpech
 Steven Naessens
+Yannick Delpech
 Nicolas Decherchi
 Jean-Luc Rabanel
 Fabian Feldmann
@@ -234,10 +235,9 @@ Fabrice et Jacky Dallais
 Frédéric Michel
 Yoshiaki Ito
 Laurent Kleczewski
-Guy Martin
+Fabien Mengus
 Julien Poisot
 Hubert Nobis
-Fabien Mengus
 Dimitri Droisneau
 Massimo Tringali
 Kei Kobayashi
@@ -257,19 +257,17 @@ Thomas Morel
 Jean-Yves Schillinger
 Richard Rocle
 David Guitton
-Christopher Hache
 Nicolas Beaumann
 Alain Montigny
 Alberico Penati
-Alexandre Baumard
 FREDERIC SIMONIN
+Alexandre Baumard
 Olivier Samson
-Hugues Droz
 Alexandre Mazzia
 Alain Passard
 Jacques Bertrand
-Patrick Michelon
 Fabienne Eymard
+Patrick Michelon
 Dominique et Julia Bucaille
 Julien Lucas
 Laurent Arbeit
@@ -281,11 +279,22 @@ Jean-Luc Tartarin
 Gilles Tournadre
 Patrick Henriroux
 Emmanuel Hebrard
+Guy Martin
 Yannick Franques
 Olivier Nasti
-Nicolas le Tirrand
 Younghoon Lee
+
+  Niché au cœur de l’Hôtel de Crillon, dont il est le joyau caché, L’Ecrin est le secret le mieux gardé de Paris. Dans un décor contemporain délicat et raffiné, les hôtes sont invités à embarquer pour un voyage culinaire à travers les save...Voir plus
+
+  Niché au cœur de l’Hôtel de Crillon, dont il est le joyau caché, L’Ecrin est le secret le mieux gardé de Paris. Dans un décor contemporain délicat et raffiné, les hôtes sont invités à embarquer pour un voyage culinaire à travers les saveurs de la cuisine inventive du Chef. 
+Le menu gastronomique servi à L’Ecrin reflète la personnalité du lieu : raffinée, précise et sophistiquée, sans pour autant sacrifier la convivialité. 
+À L’Ecrin, une approche sur mesure a été adoptée pour chaque détail. Les textures, les parfums et les couleurs font de chaque visite une expérience unique et complètent le voyage gustatif de nos hôtes.
+***
+Notre restaurant sera fermé du 24 février 2019 inclus au 04 Mars 2019, ainsi que du 04 août 2019 au 26 août 2019 inclus
+ Voir moins
+
 Sébastien Sanjou
+Serge et Maxime Chenet
 Le chef breton Julien Hennote
 Manuel Martinez
 Grégory Mirer
@@ -297,12 +306,11 @@ Takashi Kinoshita
 Julien Lefebvre
 Christian Gaulin
 Guilhem Sevin
-Arnaud Faye, Chef Exécutif et Julien Dugourd, Chef Pâtissier
 Mi-Ra et Charles Thuillant
+Arnaud Faye, Chef Exécutif et Julien Dugourd, Chef Pâtissier
 Michaël Fulci
 Fumio KUDAKA
 Thibault Sombardier
-Serge et Maxime Chenet
 Loïc Lefebvre
 Jonathan Bigaré
 Pierre Caillet
@@ -321,22 +329,22 @@ Bernard Mariller
 Anthony Bonnet
 Marc Fontanne
 Xavier Burelle
-Stéphane Tournié
 Thomas Vonderscher
+Stéphane Tournié
+Nicolas le Tirrand
 Ronan Kervarrec
 Alan Taudon
 Loïc Dantec
 Andreas Møller
-Michel Kayser
 Yoshinori Morié
+Michel Kayser
+Mathieu Pacaud
 Takuya Watanabe
 Lucien Keff
-Mathieu Pacaud
 Sylvain Guillemot
 Jean-Luc Lefrançois
 Anthony Bisquerra
 Jean-Luc Brendel
-Jean-François Piège
 Damien Sanchez
 Johan Thyriot
 Mathew Hegarty
@@ -358,14 +366,14 @@ Situé dans le 8ème arrondissement de Paris, Apicius n’est qu’à 15 minutes
 
 LE Cheviller Nikolaz
 Thibaut  Ruggeri
-Vincent Arnould
 Toshitaka Omiya
-Michel Guérard
+Vincent Arnould
+Jean-François Piège
 Pierre Reboul
 Julia Sedefdjian
+Nicolas Hensinger
 Jimmy Coutel
 Christian Sinicropi
-Nicolas Hensinger
 Nobuyuki Akishige
 Xavier Beaudiment
 Jean-Claude Cahagnet
@@ -373,11 +381,12 @@ Gérald Passedat
 Jérôme Bansard
 Pierre-Louis Marin
 Paolo Sari
+Indra Carrillo
 Mickaël Gracieux
 Kosuke Nabeta
-Indra Carrillo
 Frédérik Bizat
 Éric Girardin
+Michel Guérard
 Jean-Jacques Noguier
 Charles Fontes
 Yannick Alléno
@@ -434,8 +443,8 @@ Pascal Barbot
 Serge Vieira
 Christian Le Squer
 Franck Pelux
-Laurent Haller
 Lionel Giraud
+Laurent Haller
 Françoise Mutel
 Frédéric Larquemin
 Julien Razemon
@@ -454,9 +463,9 @@ Pierre Lambinon
 Alexandre Gauthier
 Guy  Lassausaie
 Simone Zanoni
-Bernard Bach et William Camdelon
 Marc Briand
 Sébastien Bras
+Bernard Bach et William Candelon
 Pierre Neveu
 Laurent Trochain
 Édouard Loubet

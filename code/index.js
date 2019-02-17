@@ -75,7 +75,7 @@ async function start(option){
   //--------------------Bloc qui stock dans des txt les data scrappés-------------//
 
 
-  if(option === '0'){
+/*
     tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
     console.log('url ok');
 
@@ -87,9 +87,9 @@ async function start(option){
     chefStarredResto = await michelin.grabChefName();
     arrayToTxt(chefStarredResto, 'allChefStarred.txt');
     console.log('resto chef ok');
-  }
 
 
+*/
 
 
   //------------------------------------------------------------------------------//
