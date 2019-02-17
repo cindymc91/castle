@@ -75,18 +75,22 @@ async function start(option){
   //--------------------Bloc qui stock dans des txt les data scrappés-------------//
 
 
-/*
-  tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
+  if(option === '0'){
+    tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
+    console.log('url ok');
 
-  tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
-  let j = JSON.stringify(tabHotelRestaurant);
-  toTxt(j, "json_relais-chateaux.txt");
+    tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
+    let json = JSON.stringify(tabHotelRestaurant);
+    toTxt(json, "json_relais-chateaux.txt");
+    console.log('json relaischateaux ok');
 
-  chefStarredResto = await michelin.grabChefName();
-  arrayToTxt(chefStarredResto, 'allChefStarred.txt');
-  console.log('resto chef ok');
+    chefStarredResto = await michelin.grabChefName();
+    arrayToTxt(chefStarredResto, 'allChefStarred.txt');
+    console.log('resto chef ok');
+  }
 
-*/
+
+
 
   //------------------------------------------------------------------------------//
 
@@ -203,6 +207,7 @@ async function menu(){
 }
 
 menu();
+//start(0);
 
 
 

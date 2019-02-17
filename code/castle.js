@@ -33,7 +33,7 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
   let jsonObject;
 
 
-  for(var i = 0; i < 2; i++){
+  for(var i = 0; i < tabAllurl.length; i++){
     //Une requête
     process.stdout.write("Fetching " + i + "/" + tabAllurl.length + "\r");
     const options = {
