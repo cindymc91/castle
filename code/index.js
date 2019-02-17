@@ -1,5 +1,7 @@
 const castle = require('./castle');
 const michelin = require('./michelin')
+var colors = require('colors');
+const readLineSync = require('readline-sync');
 
 
 /*const options = {
@@ -64,11 +66,11 @@ function fromTxt(file){
 }
 
 let tabWithAllurl; //liste avec les 150 url correspondant aux établissements français
-let tabHotelRestaurant; //liste avec les noms des chefs des établissements
+let tabHotelRestaurant; //liste d'objets Json avec les infos de RelaisChateaux
 let chefStarredResto; //liste avec les chefs des restos étoilés
 let finalSelection = []; //liste avec les établissements français étoilés
 
-async function start(){
+async function start(option){
 
   //--------------------Bloc qui stock dans des txt les data scrappés-------------//
 
@@ -92,37 +94,54 @@ async function start(){
 
   //--------------------Bloc qui récup les données des txt et les mets dans les array-------------//
 
+  if(option === '1'){
 
-  tabWithAllurl = txtToArray("allurl.txt");
+    tabWithAllurl = txtToArray("allurl.txt");
 
-  let j_bis = fromTxt("json_relais-chateaux.txt");
-  tabHotelRestaurant = JSON.parse(j_bis);
+    let j_bis = fromTxt("json_relais-chateaux.txt");
+    tabHotelRestaurant = JSON.parse(j_bis);
 
-  chefStarredResto = txtToArray("allChefStarred.txt");
+    chefStarredResto = txtToArray("allChefStarred.txt");
 
-  //console.log(tabHotelRestaurant[10].chefName);
-  //console.log(chefStarredResto[10]);
-  //console.log(tabHotelRestaurant.length);
+    console.log("We are using saved data.")
+    console.log("In the " + tabWithAllurl.length + " french properties, " + tabHotelRestaurant.length + " are hotel + restaurant.")
+
+    //console.log(tabHotelRestaurant[10].chefName);
+    //console.log(chefStarredResto[10]);
+    //console.log(tabHotelRestaurant.length);
+  }
+
+
 
 
   //------------------------------------------------------------------------------//
 
 
 
-  /*
+
   //--------------------Bloc à exécuter pour du scraping en temps réel (très long)-------------//
 
+  if(option === '2'){
     //On récupère la partie Relaix Chateaux
-    //--tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
-    //--tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
+    console.log("Searching for all French properties".green.bgBlack);
+    tabWithAllurl = await castle.grabAllurl('https://www.relaischateaux.com/fr/site-map/etablissements');
+    console.log("Got " + tabWithAllurl.length + " french properties")
+
+    console.log("\nChecking if it has hotel + restaurant".green.bgBlack);
+    tabHotelRestaurant = await castle.checkHotelRestaurant(tabWithAllurl);
+    console.log("Got " + tabHotelRestaurant.length + " Hotel / Restaurant properties")
 
 
     //On récupère la partie Michelin
-    //--chefStarredResto = await michelin.grabChefName();
+    console.log("\nGrabing all Michelin starred chef".green.bgBlack);
+    chefStarredResto = await michelin.grabChefName();
+    console.log("Got " + chefStarredResto.length + " starred chef from Michelin website")
+  }
+
 
 
   //------------------------------------------------------------------------------//
-  */
+
 
 
 //Comparaison pour ne garder que les étoilés
@@ -134,37 +153,51 @@ async function start(){
       }
     }
   }
-  console.log(finalSelection);
-  console.log(finalSelection.length);
+  //console.log(finalSelection);
+  //console.log(finalSelection.length);
 
 //let price = castle.getPrice2(tabWithAllurl);
-
-
 
 }
 
 
-
 //start();
 
-function menu(){
-  const readLineSync = require('readline-sync')
-  var colors = require('colors');
+async function menu(){
 
   let userRes;
+
   console.clear();
   while (userRes !== '0') {
-    console.log("-------------------------------------------------")
-    console.log("Relais-Chateaux / Michelin Restaurant WORKSHOP".green.bgBlack)
-    console.log("-------------------------------------------------")
-    console.log("Search in saved data (quick)")
-    console.log("Search in real time (may take up to 10 minutes)")
-    userRes = readLineSync.question("\nPick a mode or Press Ctrl+C to exit");
+    console.log("-------------------------------------------------");
+    console.log("Relais-Chateaux / Michelin Restaurant WORKSHOP".green.bgBlue);
+    console.log("-------------------------------------------------");
+    console.log("1. Search in saved data (quick)");
+    console.log("2. Search in real time (may take up to 20 minutes)");
+    console.log("0. Exit the program");
+
+    userRes = readLineSync.question("\nPick an option : ");
+
     if (userRes === '1') {
-      console.log("You chose option 1")
+      await start(userRes);
+      console.log("\nWe found " + finalSelection.length + " of Hotel-Restaurant at RelaisChateaux website.\nHere they are :\n");
+      for(var i = 0; i < finalSelection.length; i++){
+        console.log("Property Name : " + finalSelection[i].propertyName.blue);
+        console.log("Chef Name : " + finalSelection[i].chefName.blue);
+        console.log("Starting price : " + finalSelection[i].startPrice.red);
+        console.log("");
+      }
 
     } else if (userRes === '2') {
-      start();
+      await start(userRes);
+      console.log("\nWe found " + finalSelection.length + " of Hotel-Restaurant at RelaisChateaux website.\nHere they are :\n");
+
+      for(var i = 0; i < finalSelection.length; i++){
+        console.log("Property Name : " + finalSelection[i].propertyName.blue);
+        console.log("Chef Name : " + finalSelection[i].chefName.blue);
+        console.log("Starting price : " + finalSelection[i].startPrice.red);
+        console.log("");
+      }
     }
   }
 }

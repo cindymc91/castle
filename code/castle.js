@@ -29,11 +29,13 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
   let urlTabResto;
   let propertyName;
   let chefName;
+  let startPrice;
   let jsonObject;
 
 
-  for(var i = 0; i < tabAllurl.length; i++){
+  for(var i = 0; i < 2; i++){
     //Une requête
+    process.stdout.write("Fetching " + i + "/" + tabAllurl.length + "\r");
     const options = {
       uri: tabAllurl[i],
       transform: function (body) {
@@ -51,6 +53,7 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
 
         urlTabResto = $('.jsSecondNav').children('.jsSecondNavMain').children('li').eq(1).children('a').attr('href');
         propertyName = $('h3.mainTitle2.noVerticalMargin').first().text();
+        startPrice = $('.price').text();
 
 
         const options2 = {
@@ -66,7 +69,8 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
           'url' : tabAllurl[i],
           'urlTabResto' : urlTabResto,
           'propertyName' : propertyName,
-          'chefName' : chefName
+          'chefName' : chefName,
+          'startPrice' : startPrice
         };
 
         filteredResults.push(jsonObject);
@@ -80,7 +84,7 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
         //console.log('Bad');
       }
 
-      process.stdout.write("Fetching " + i + "/" + tabAllurl.length + "\r");
+
   }
   catch(error){
     console.log(error);
@@ -93,23 +97,6 @@ exports.checkHotelRestaurant = async function checkHotelRestaurant(tabAllurl){
 
 // "https://www.relaischateaux.com/fr/search/availability/check?month=2019-2&idEntity=360&pax=2&room=1"
 
-exports.getPrice = function getPrice(url){
-  const options = {
-    uri: url,
-    json : true
-  }
-
-  request_promise(options)
-    .then((data) => {
-      let result;
-      //result = data['2019-2'].pricesPerDay[1];
-      //result = data.directory_items[0].user.username;
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
 
 exports.getPrice2 = async function getPrice2(tabAllurl){
   for(var i = 0; i < 2; i++){

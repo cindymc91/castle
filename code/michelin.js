@@ -73,6 +73,8 @@ exports.grabChefName = async function grabChefName(){
       //tabStar.push($2('.node-poi-description').children('field').children('.field__items').children('div').text());
       //console.log(allLinks[i]);
       //console.log(test);
+
+      process.stdout.write("Fetching " + i + "/" + allLinks.length + "\r");
     }
     catch(error){
       console.log(error);
